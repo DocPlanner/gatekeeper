@@ -1,0 +1,17 @@
+{
+	"name": "gate/keeper",
+	"description": "Gatekeeper",
+	"minimum-stability": "stable",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "Łukasz Barulski",
+			"email": "tracerout@yahoo.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"GateKeeper\\": "gatekeeper/"
+		}
+	}
+}
