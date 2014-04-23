@@ -6,12 +6,16 @@
 
 namespace GateKeeper;
 
+use GateKeeper\Access\AbstractAccess;
+use GateKeeper\Repository\RepositoryInterface;
+use GateKeeper\User\UserInterface;
+
 class Keeper
 {
 	/**
-	 * @var Abstraction\GateKeeperQueryInterface
+	 * @var RepositoryInterface
 	 */
-	protected $gateKeeperQuery;
+	protected $repository;
 
 	/**
 	 * @var array
@@ -19,32 +23,32 @@ class Keeper
 	protected $accessList = [];
 
 	/**
-	 * @param Abstraction\GateKeeperQueryInterface $gateKeeperQuery
+	 * @param RepositoryInterface $repository
 	 */
-	public function __construct(Abstraction\GateKeeperQueryInterface $gateKeeperQuery)
+	public function __construct(RepositoryInterface $repository)
 	{
-		$this->gateKeeperQuery = $gateKeeperQuery;
+		$this->repository = $repository;
 	}
 
 	/**
-	 * @param Abstraction\AbstractAccess $access
+	 * @param AbstractAccess $access
 	 *
 	 * @return void
 	 */
-	public function addAccess(Abstraction\AbstractAccess $access)
+	public function addAccess(AbstractAccess $access)
 	{
 		$this->accessList[$access->getName()] = $access;
 	}
 
 	/**
 	 * @param string        $gateName
-	 * @param Abstraction\UserInterface $user
+	 * @param UserInterface $user
 	 *
 	 * @return bool
 	 */
-	public function hasAccess($gateName, Abstraction\UserInterface $user = null)
+	public function hasAccess($gateName, UserInterface $user = null)
 	{
-		$gateModel = $this->gateKeeperQuery->getGateByName($gateName);
+		$gateModel = $this->repository->get($gateName);
 		if (null === $gateModel)
 		{
 			return false;
@@ -63,7 +67,7 @@ class Keeper
 	/**
 	 * @param $accessName
 	 *
-	 * @return Abstraction\AbstractAccess|null
+	 * @return AbstractAccess|null
 	 */
 	protected function getAccess($accessName)
 	{

@@ -4,7 +4,9 @@
  * Date: 22.04.14 15:07
  */
 
-namespace GateKeeper\Abstraction;
+namespace GateKeeper\Access;
+
+use GateKeeper\User\UserInterface;
 
 abstract class AbstractAccess
 {

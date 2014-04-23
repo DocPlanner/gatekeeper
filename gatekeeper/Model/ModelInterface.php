@@ -4,9 +4,9 @@
  * Date: 22.04.14 15:04
  */
 
-namespace GateKeeper\Abstraction;
+namespace GateKeeper\Model;
 
-interface GateKeeperModelInterface
+interface ModelInterface
 {
 	/**
 	 * @return string

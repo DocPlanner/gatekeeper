@@ -7,6 +7,10 @@
 		{
 			"name": "Łukasz Barulski",
 			"email": "tracerout@yahoo.com"
+		},
+		{
+			"name": "Bartłomiej Kuleszewicz",
+			"email": "bartlomiej.kuleszewicz@gmail.com"
 		}
 	],
 	"autoload": {

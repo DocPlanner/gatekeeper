@@ -4,7 +4,7 @@
  * Date: 22.04.14 15:36
  */
 
-namespace GateKeeper\Abstraction;
+namespace GateKeeper\User;
 
 interface UserInterface
 {
