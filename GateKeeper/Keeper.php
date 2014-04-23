@@ -6,7 +6,7 @@
 
 namespace GateKeeper;
 
-use GateKeeper\Access\AbstractAccess;
+use GateKeeper\Access\AccessInterface;
 use GateKeeper\Repository\RepositoryInterface;
 use GateKeeper\User\UserInterface;
 
@@ -31,11 +31,11 @@ class Keeper
 	}
 
 	/**
-	 * @param AbstractAccess $access
+	 * @param AccessInterface $access
 	 *
 	 * @return void
 	 */
-	public function addAccess(AbstractAccess $access)
+	public function addAccess(AccessInterface $access)
 	{
 		$this->accessList[$access->getName()] = $access;
 	}
@@ -67,7 +67,7 @@ class Keeper
 	/**
 	 * @param $accessName
 	 *
-	 * @return AbstractAccess|null
+	 * @return AccessInterface|null
 	 */
 	protected function getAccess($accessName)
 	{

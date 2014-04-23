@@ -34,7 +34,7 @@ interface RepositoryInterface
 	/**
 	 * @param string $name
 	 *
-	 * @return ModelInterface
+	 * @return ModelInterface|null
 	 */
 	public function get($name);
 }

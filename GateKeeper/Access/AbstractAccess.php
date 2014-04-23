@@ -8,19 +8,22 @@ namespace GateKeeper\Access;
 
 use GateKeeper\User\UserInterface;
 
-abstract class AbstractAccess
+abstract class AbstractAccess implements AccessInterface
 {
 	/**
-	 * @param UserInterface $userInterface
+	 * @var UserInterface
+	 */
+	protected $user;
+
+	/**
+	 * @param UserInterface $user
 	 *
 	 * @return void
 	 */
-	public abstract function setUser(UserInterface $userInterface = null);
-
-	/**
-	 * @return string
-	 */
-	public abstract function getName();
+	public function setUser(UserInterface $user = null)
+	{
+		$this->user = $user;
+	}
 
 	/**
 	 * @return bool
