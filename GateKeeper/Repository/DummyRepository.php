@@ -40,5 +40,7 @@ class DummyRepository implements RepositoryInterface
 	public function get($name)
 	{
 		// TODO: Implement get() method.
+
+		return null;
 	}
 }
