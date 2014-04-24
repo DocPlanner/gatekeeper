@@ -4,9 +4,9 @@
  * Date: 22.04.14 15:36
  */
 
-namespace GateKeeper\User;
+namespace GateKeeper\Object;
 
-interface UserInterface
+interface ObjectInterface
 {
 
 } 

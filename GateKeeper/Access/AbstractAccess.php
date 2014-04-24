@@ -6,21 +6,38 @@
 
 namespace GateKeeper\Access;
 
-use GateKeeper\User\UserInterface;
+use GateKeeper\Object\ObjectInterface;
 
 abstract class AbstractAccess implements AccessInterface
 {
 	/**
-	 * @var UserInterface
+	 * @var ObjectInterface
 	 */
-	protected $user;
+	protected $object;
+
+	/**
+	 * @var array
+	 */
+	protected $attributes = [];
 
 	/**
 	 * @inheritdoc
 	 */
-	public function setUser(UserInterface $user = null)
+	public function setObject(ObjectInterface $object = null)
 	{
-		$this->user = $user;
+		$this->object = $object;
+
+		return $this;
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function setAttributes(array $attributes)
+	{
+		$this->attributes = $attributes;
+
+		return $this;
 	}
 
 	/**

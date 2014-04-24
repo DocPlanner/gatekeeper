@@ -7,8 +7,8 @@
 namespace GateKeeper;
 
 use GateKeeper\Access\AccessInterface;
+use GateKeeper\Object\ObjectInterface;
 use GateKeeper\Repository\RepositoryInterface;
-use GateKeeper\User\UserInterface;
 
 class Keeper
 {
@@ -33,20 +33,23 @@ class Keeper
 	/**
 	 * @param AccessInterface $access
 	 *
-	 * @return void
+	 * @return $this
 	 */
 	public function addAccess(AccessInterface $access)
 	{
 		$this->accessList[$access->getName()] = $access;
+
+		return $this;
 	}
 
 	/**
-	 * @param string        $gateName
-	 * @param UserInterface $user
+	 * @param string          $gateName
+	 * @param ObjectInterface $object
+	 * @param array           $attributes
 	 *
 	 * @return bool
 	 */
-	public function hasAccess($gateName, UserInterface $user = null)
+	public function hasAccess($gateName, ObjectInterface $object = null, $attributes = [])
 	{
 		$gateModel = $this->repository->get($gateName);
 		if (null === $gateModel)
@@ -56,10 +59,12 @@ class Keeper
 
 		$access = $gateModel->getAccess();
 		$access = $this->getAccess($access);
-		if (null !== $user)
+		if (null !== $object)
 		{
-			$access->setUser($user);
+			$access->setObject($object);
 		}
+
+		$access->setAttributes($attributes);
 
 		return $access->hasAccess();
 	}
