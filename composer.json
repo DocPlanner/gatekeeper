@@ -1,5 +1,5 @@
 {
-	"name": "gate/keeper",
+	"name": "docplanner/gatekeeper",
 	"description": "Gatekeeper",
 	"minimum-stability": "stable",
 	"license": "proprietary",
