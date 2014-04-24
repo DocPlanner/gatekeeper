@@ -16,9 +16,7 @@ abstract class AbstractAccess implements AccessInterface
 	protected $user;
 
 	/**
-	 * @param UserInterface $user
-	 *
-	 * @return void
+	 * @inheritdoc
 	 */
 	public function setUser(UserInterface $user = null)
 	{
@@ -26,7 +24,7 @@ abstract class AbstractAccess implements AccessInterface
 	}
 
 	/**
-	 * @return bool
+	 * @inheritdoc
 	 */
 	public function hasAccess()
 	{
