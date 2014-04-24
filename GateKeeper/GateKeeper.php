@@ -10,7 +10,7 @@ use GateKeeper\Access\AccessInterface;
 use GateKeeper\Object\ObjectInterface;
 use GateKeeper\Repository\RepositoryInterface;
 
-class Keeper
+class GateKeeper
 {
 	/**
 	 * @var RepositoryInterface
