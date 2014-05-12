@@ -15,7 +15,8 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"GateKeeper\\": "GateKeeper/"
+			"GateKeeper\\": "GateKeeper/",
+			"GateKeeper\\Tests\\": "Tests/"
 		}
 	}
 }
