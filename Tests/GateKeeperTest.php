@@ -57,7 +57,7 @@ class GateKeeperTest extends \PHPUnit_Framework_TestCase
 		$model = $this->prepareModel('allow');
 		$repository = $this->prepareRepository($model);
 		$access = $this->prepareAccess('allow', true);
-		$object = $this->getMock('\GateKeeper\Object\ObjectInterface');
+		$object = $this->getMock('\GateKeeper\Item\ItemInterface');
 		$access->expects($this->once())->method('setObject')->with($object);
 
 		$gateKeeper = new GateKeeper($repository);

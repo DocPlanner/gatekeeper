@@ -6,7 +6,7 @@
 
 namespace GateKeeper\Access;
 
-use GateKeeper\Object\ObjectInterface;
+use GateKeeper\Item\ItemInterface;
 
 interface AccessInterface
 {
@@ -16,11 +16,11 @@ interface AccessInterface
 	public function getName();
 
 	/**
-	 * @param ObjectInterface $object
+	 * @param ItemInterface $object
 	 *
 	 * @return $this
 	 */
-	public function setObject(ObjectInterface $object = null);
+	public function setObject(ItemInterface $object = null);
 
 	/**
 	 * @param array $attributes

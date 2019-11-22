@@ -6,12 +6,12 @@
 
 namespace GateKeeper\Access;
 
-use GateKeeper\Object\ObjectInterface;
+use GateKeeper\Item\ItemInterface;
 
 abstract class AbstractAccess implements AccessInterface
 {
 	/**
-	 * @var ObjectInterface
+	 * @var ItemInterface
 	 */
 	protected $object;
 
@@ -23,7 +23,7 @@ abstract class AbstractAccess implements AccessInterface
 	/**
 	 * @inheritdoc
 	 */
-	public function setObject(ObjectInterface $object = null)
+	public function setObject(ItemInterface $object = null)
 	{
 		$this->object = $object;
 

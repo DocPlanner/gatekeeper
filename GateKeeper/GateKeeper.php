@@ -7,7 +7,7 @@
 namespace GateKeeper;
 
 use GateKeeper\Access\AccessInterface;
-use GateKeeper\Object\ObjectInterface;
+use GateKeeper\Item\ItemInterface;
 use GateKeeper\Repository\RepositoryInterface;
 
 class GateKeeper
@@ -43,13 +43,13 @@ class GateKeeper
 	}
 
 	/**
-	 * @param string          $gateName
-	 * @param ObjectInterface $object
-	 * @param array           $attributes
+	 * @param string        $gateName
+	 * @param ItemInterface $object
+	 * @param array         $attributes
 	 *
 	 * @return bool
 	 */
-	public function hasAccess($gateName, ObjectInterface $object = null, $attributes = [])
+	public function hasAccess($gateName, ItemInterface $object = null, $attributes = [])
 	{
 		$gateModel = $this->repository->get($gateName);
 		if (null === $gateModel)
